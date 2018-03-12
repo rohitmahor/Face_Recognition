@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-face_cascade = cv2.CascadeClassifier('/media/rohitkumar/Rohit-Sonu/python3/projects/Face_detection/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('/media/rohitkumar/Rohit-Sonu/python3/projects/Face_Recognition/haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 
 while True:
@@ -13,6 +13,8 @@ while True:
         cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
     cv2.imshow('img', img)
+
+    # 27 is for ESC key
     k = cv2.waitKey(30) & 0xff
     if k == 27:
         break
